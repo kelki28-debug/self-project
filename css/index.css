@@ -220,6 +220,10 @@ body{
     .nav-icon::after{
         top: -.5rem;
     }
+    .nav-checkbox:checked ~ .nav-background{
+        transform: scale(100);
+        backface-visibility: hidden;
+    }
 }
 
 
