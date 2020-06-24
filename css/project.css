@@ -309,7 +309,7 @@ link:visited{
         top: -.3rem;
     }
     .nav-checkbox:checked ~ .nav-background{
-        transform: scale(100);
+        transform: scale(200);
         backface-visibility: hidden;
     }
 }
