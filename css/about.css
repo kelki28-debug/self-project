@@ -1,0 +1,332 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    background-image: radial-gradient(circle,gray, black);
+    color: rgb(248, 247, 247);
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.navigation{
+
+}
+.nav-checkbox{
+    display: none;
+}
+.nav-checkbox:checked ~ .nav-background{
+    transform: scale(50);
+}
+.nav-checkbox:checked ~ .nav{
+    opacity: 1;
+    width: 100%;
+}
+.nav-button{
+    position: fixed;
+    height: 7rem;
+    width: 7rem;
+    background-color: rgb(255, 255, 255);
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem (rgba(17, 17, 17, 0.055), .1);
+}
+.nav-background{
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    border-radius: 50%;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient(rgb(5, 5, 5), rgb(30, 30, 77));
+    z-index: 1000;
+    transition: transform .8s ;
+    /* transform: scale(50); */
+}
+.nav{
+    height: 100vh;
+    position: fixed;
+    top:0;
+    right: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+    transition: all .8s;
+}
+.nav-list{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    list-style: none;
+    text-align: center;
+}
+.nav-items{
+    margin-bottom: 1rem;
+}
+.nav-link{
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    color: rgb(118, 111, 124);
+    text-transform: uppercase;
+    text-decoration: none;
+    background-size:0%;
+    transition: all .2s;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-image:linear-gradient(120deg, transparent 0%,transparent 50%, rgb(126, 118, 118) 50%);
+}
+.nav-link:hover,
+.nav-link:active{
+    background-size:225%;
+    color: rgb(235, 233, 225);
+    transform: translateX(1rem);
+}
+.nav-icon{
+    position: fixed;
+    margin-top: 3rem;
+    top: 6.2rem;
+    right: 8rem;
+    z-index: 3000;
+}
+.nav-icon,
+.nav-icon::before,
+.nav-icon::after{
+    width: 3rem;
+    height: 2px;
+    display: inline-block;
+    background-color: rgb(27, 27, 27);
+    
+}
+.nav-icon::before,
+.nav-icon::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    transition: all .2s;
+}
+.nav-icon::before{
+    top: 1rem;
+}
+
+.nav-icon::after{
+    top: -1rem;
+}
+.nav-checkbox:checked + .nav-icon{
+    background-color: transparent;
+}
+.nav-checkbox:checked + .nav-icon::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+.nav-checkbox:checked + .nav-icon::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    height: 30rem;
+    width: 40rem;
+    background-color: rgba(198, 218, 205, 0.61);
+    transform: skewx(-12deg);
+    padding: 2rem;
+}
+.h2{
+    background-image: linear-gradient(to left, white, rgb(167, 230, 67));
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: skewX(12deg);
+    font-size: 3rem;
+    text-align: center;
+}
+.p{
+    font-size: 2rem;
+    transform: skewX(12deg);
+    margin-top: 6rem;
+    animation: fading 1s ease-in-out;
+}
+@keyframes fading {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    .card{
+        height: 10rem;
+        width: 20rem;
+        background-color: rgba(198, 218, 205, 0.61);
+        transform: skewx(-12deg);
+        padding: 1rem;
+    }
+    .h2{
+        background-image: linear-gradient(to left, white, rgb(167, 230, 67));
+        -webkit-background-clip: text;
+        color: transparent;
+        transform: skewX(12deg);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .p{
+        font-size: 1rem;
+        transform: skewX(12deg);
+        margin-top: 2rem;
+        animation: fading 1s ease-in-out;
+    }
+    .nav-link{
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        color: rgb(118, 111, 124);
+        text-transform: uppercase;
+        text-decoration: none;
+        background-size:0%;
+        transition: all .2s;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-image:linear-gradient(120deg, transparent 0%,transparent 50%, rgb(126, 118, 118) 50%);
+    }
+    .nav-icon{
+        position: fixed;
+        margin-top:2.3rem;
+        top: 4.2rem;
+        right: 5.7rem;
+        z-index: 3000;
+    }
+    .nav-button{
+        position: fixed;
+        height: 3rem;
+        width: 3rem;
+        background-color: rgb(255, 255, 255);
+        top: 5rem;
+        right: 5rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem (rgba(17, 17, 17, 0.055), .1);
+    }
+    .nav-background{
+        height: 2rem;
+        width: 2rem;
+        position: fixed;
+        border-radius: 50%;
+        top: 5.5rem;
+        right: 5.5rem;
+        background-image: radial-gradient(rgb(5, 5, 5), rgb(30, 30, 77));
+        z-index: 1000;
+        transition: transform .8s ;
+    }
+    .nav-icon,
+    .nav-icon::before,
+    .nav-icon::after{
+    width: 1.5rem;
+    height: 1px;
+    display: inline-block;
+    background-color: rgb(27, 27, 27);
+    }
+    .nav-icon::before{
+        top: .5rem;
+    }
+    
+    .nav-icon::after{
+        top: -.5rem;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width:991px){
+    .card{
+        height: 15rem;
+        width: 25rem;
+        background-color: rgba(198, 218, 205, 0.61);
+        transform: skewx(-12deg);
+        padding: 1rem;
+    }
+    .h2{
+        background-image: linear-gradient(to left, white, rgb(167, 230, 67));
+        -webkit-background-clip: text;
+        color: transparent;
+        transform: skewX(12deg);
+        font-size: 2rem;
+        text-align: center;
+    }
+    .p{
+        font-size: 1.5rem;
+        transform: skewX(12deg);
+        margin-top: 3rem;
+        animation: fading 1s ease-in-out;
+    }
+    .nav-link{
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        color: rgb(118, 111, 124);
+        text-transform: uppercase;
+        text-decoration: none;
+        background-size:0%;
+        transition: all .2s;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-image:linear-gradient(120deg, transparent 0%,transparent 50%, rgb(126, 118, 118) 50%);
+    }
+    .nav-icon{
+        position: fixed;
+        margin-top:1.3rem;
+        top: 4.2rem;
+        right: 5.7rem;
+        z-index: 3000;
+    }
+    .nav-button{
+        position: fixed;
+        height: 3rem;
+        width: 3rem;
+        background-color: rgb(255, 255, 255);
+        top: 4rem;
+        right: 5rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem (rgba(17, 17, 17, 0.055), .1);
+    }
+    .nav-background{
+        height: 2rem;
+        width: 2rem;
+        position: fixed;
+        border-radius: 50%;
+        top: 4.5rem;
+        right: 5.5rem;
+        background-image: radial-gradient(rgb(5, 5, 5), rgb(30, 30, 77));
+        z-index: 1000;
+        transition: transform .8s ;
+    }
+    .nav-icon,
+    .nav-icon::before,
+    .nav-icon::after{
+    width: 1.5rem;
+    height: 1px;
+    display: inline-block;
+    background-color: rgb(27, 27, 27);
+    }
+    .nav-icon::before{
+        top: .5rem;
+    }
+    
+    .nav-icon::after{
+        top: -.5rem;
+    }
+    .nav-checkbox:checked ~ .nav-background{
+        transform: scale(100);
+    }
+}
