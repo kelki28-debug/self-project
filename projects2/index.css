@@ -1,0 +1,15 @@
+body{
+   
+    text-align: center;
+}
+.container{
+    
+}
+button{
+    padding: 2px 20px;
+    background-color: blueviolet;
+    color: white;
+}
+p{
+    font-weight: bold;
+}
